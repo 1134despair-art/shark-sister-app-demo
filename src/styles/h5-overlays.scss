@@ -1,0 +1,33 @@
+/* H5 runtime dialogs share the app's typography and surfaces. */
+uni-modal .uni-mask, .uni-mask.uni-actionsheet__mask, .uni-mask.uni-picker-mask { background: rgba(24,32,44,.44); }
+uni-modal .uni-modal { width: calc(100% - 48px); max-width: 344px; max-height: calc(100% - 48px); overflow-y: auto; border-radius: 12px; background: #fff; color: var(--color-text-primary); text-align: left; box-shadow: 0 16px 56px rgba(24,32,44,.18); }
+uni-modal .uni-modal__hd { padding: 24px 24px 0; }
+uni-modal .uni-modal__title { display: block; font-size: 20px; line-height: 28px; font-weight: 650; word-break: normal; overflow-wrap: anywhere; }
+uni-modal .uni-modal__bd { min-height: 0; max-height: 45dvh; padding: 14px 24px 24px; color: var(--color-text-secondary); font-size: 14px; line-height: 24px; word-break: normal; overflow-wrap: anywhere; }
+uni-modal .uni-modal__ft { gap: 10px; padding: 0 24px 24px; font-size: 14px; line-height: 22px; }
+uni-modal .uni-modal__ft::after, uni-modal .uni-modal__btn::after { display: none; }
+uni-modal .uni-modal__btn { display: flex; min-width: 0; min-height: 46px; align-items: center; justify-content: center; padding: 11px 8px; border: 1px solid var(--color-border-subtle); border-radius: 8px; text-align: center; }
+uni-modal .uni-modal__btn_primary { background: var(--ss-brand-50); border-color: var(--ss-brand-200); }
+uni-modal .uni-modal__textarea { width: 100%; padding: 12px; background: var(--color-bg-canvas); border: 1px solid var(--color-border-subtle); border-radius: 8px; font-size: 15px; line-height: 22px; }
+body uni-actionsheet .uni-actionsheet { top: auto; right: 0; bottom: 0; left: 0; width: 100%; max-height: calc(100% - 40px); padding: 12px 20px calc(20px + env(safe-area-inset-bottom)); overflow-y: auto; background: #fff; border-radius: 16px 16px 0 0; transform: translate(0,100%); }
+body uni-actionsheet .uni-actionsheet { box-sizing: border-box; }
+body uni-actionsheet .uni-actionsheet.uni-actionsheet_toggle { transform: translate(0,0); }
+body uni-actionsheet .uni-actionsheet__menu { background: #fff; border-radius: 0; box-shadow: none; }
+body uni-actionsheet .uni-actionsheet__action { display: block; margin-top: 16px; background: var(--color-bg-canvas); border-radius: 8px; }
+uni-actionsheet .uni-actionsheet__cell, uni-actionsheet .uni-actionsheet__title { padding: 16px 10px; font-size: 15px; line-height: 24px; white-space: normal; overflow-wrap: anywhere; }
+.uni-picker-container .uni-picker-custom { box-sizing: border-box; overflow: hidden; border: 1px solid var(--color-border-subtle); border-radius: 12px; box-shadow: 0 8px 32px rgba(24,32,44,.16); }
+.uni-picker-container .uni-picker-header { height: 52px; background: #fff; }
+.uni-picker-container .uni-picker-action { padding: 0 20px; font-size: 15px; line-height: 52px; }
+.uni-picker-container .uni-picker-action.uni-picker-action-confirm { color: var(--color-action-primary); font-weight: 600; }
+.uni-picker-container .uni-picker-action.uni-picker-action-cancel { color: var(--color-text-secondary); }
+.uni-picker-container .uni-picker-item { color: var(--color-text-body); font-size: 15px; }
+.uni-selector-select .uni-picker-item { height: auto; min-height: 48px; padding: 12px 16px; line-height: 24px; white-space: normal; overflow-wrap: anywhere; text-align: left; }
+.uni-selector-select .uni-picker-item.selected { color: var(--color-action-primary); background: var(--ss-brand-50); }
+@media (max-width: 500px) { .uni-picker-container .uni-picker-custom { border-radius: 16px 16px 0 0; padding-bottom: env(safe-area-inset-bottom); } }
+
+/* Uni runtime overlays are mounted outside #app, so give their portals the same frame. */
+@media (min-width: 1024px), (min-width: 431px) and (hover: hover) and (pointer: fine) {
+  uni-actionsheet, uni-modal, .uni-picker-container { position: fixed; z-index: 999; inset: auto; top: 50%; left: 50%; width: 390px; height: min(844px, calc(100dvh - 32px)); overflow: hidden; border-radius: 40px; transform: translate(-50%,-50%); pointer-events: none; }
+  uni-actionsheet .uni-actionsheet_toggle, uni-actionsheet .uni-mask, uni-modal .uni-modal, uni-modal .uni-mask, .uni-picker-container .uni-picker-toggle, .uni-picker-container .uni-mask { pointer-events: auto; }
+  .uni-picker-container .uni-picker-custom.uni-picker-toggle { top: auto!important; right: 0!important; bottom: 0!important; left: 0!important; width: 100%!important; max-height: calc(100% - 40px); border-radius: 16px 16px 0 0; transform: none!important; }
+}

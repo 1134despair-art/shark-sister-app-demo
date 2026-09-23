@@ -1,0 +1,316 @@
+/* Shared by secondary routes so every business state uses the same controls. */
+.page-scroll, .entity-scroll { box-sizing: border-box; padding: 20px 20px calc(28px + env(safe-area-inset-bottom)); }
+.page-scroll.with-cta { padding-bottom: calc(104px + env(safe-area-inset-bottom)); }
+.page-scroll.with-nav { padding-bottom: calc(96px + env(safe-area-inset-bottom)); }
+.page .section { margin-top: 24px; }
+.page .section-head { min-height: 36px; gap: 12px; margin-bottom: 12px; }
+.page .section-title, .page .card-title { font-size: 17px; line-height: 25px; font-weight: 650; }
+.page .section-link, .page .section-meta, .page .caption { font-size: 12px; line-height: 19px; }
+.page .list-card { border: 1px solid var(--color-border-subtle); border-radius: 8px; box-shadow: var(--shadow-card); }
+.page .list-row { min-height: 60px; gap: 12px; padding: 14px; border-bottom-width: 1px; }
+.page .list-copy strong { font-size: 15px; line-height: 22px; font-weight: 600; }
+.page .list-copy text { margin-top: 4px; font-size: 12px; line-height: 18px; }
+.page .row-value { font-size: 12px; line-height: 19px; }
+.page .row-icon, .page .icon-tile { display: flex; width: 34px; height: 34px; flex: 0 0 34px; align-items: center; justify-content: center; border-radius: 8px; }
+
+.page .field { margin-bottom: 22px; }
+.page .field-label { display: flex; align-items: baseline; gap: 10px; margin-bottom: 9px; color: var(--color-text-body); font-size: 13px; line-height: 20px; font-weight: 600; }
+.page .field-control, .page .input-shell { display: flex; min-height: 50px; gap: 10px; padding: 0 14px; background: var(--ss-neutral-25); border: 1px solid var(--ss-neutral-200); border-radius: 8px; }
+.page .field-control:focus-within, .page .input-shell:focus-within { background: #fff; border-color: var(--color-action-primary); box-shadow: 0 0 0 3px var(--ss-brand-50); }
+.page .field-control input, .page .input-shell input { min-width: 0; height: 48px; flex: 1; color: var(--color-text-primary); font-size: 15px; line-height: 22px; }
+.page .field-control.textarea { min-height: 128px; align-items: flex-start; padding: 12px 14px; }
+.page .field-control textarea { height: 104px; padding: 0; font-size: 15px; line-height: 24px; }
+.page .field-control.textarea > .ss-icon { margin-top: 2px; }
+.page .field-hint, .page .field-counter, .page .form-error, .page .attachment-tip, .page .character-count { font-size: 12px; line-height: 19px; }
+.page .field-hint { display: block; margin-top: 8px; }
+.page .select-control, .page .date-control { min-height: 50px; cursor: pointer; }
+.page .picker-value, .page .service-project-value, .page .support-design-value { min-width: 0; flex: 1; padding: 12px 0; color: var(--color-text-primary); font-size: 14px; line-height: 22px; white-space: normal; overflow-wrap: anywhere; }
+.page .picker-value.placeholder { color: var(--color-text-secondary); }
+.page .field-control.muted, .page .assignment-readonly { background: var(--color-bg-canvas); color: var(--color-text-secondary); }
+.page .field-control .inline-action, .page .send-code, .page .serial-generate, .page .serial-manual > button { display: flex; min-height: 42px; flex-shrink: 0; align-items: center; padding: 0 4px 0 10px; color: var(--color-action-primary); background: transparent; border: 0; font-size: 12px; line-height: 18px; }
+.page .masked-contact { min-width: 0; flex: 1; font-size: 14px; }
+.page .notice { gap: 10px; padding: 14px; border: 1px solid var(--ss-brand-200); border-radius: 8px; font-size: 13px; line-height: 21px; }
+.page .notice > view, .page .notice > text:not(.ss-icon) { min-width: 0; flex: 1; }
+.page .notice > .ss-icon { flex: 0 0 auto !important; }
+.page .notice strong { font-size: 14px; line-height: 21px; }.page .notice text { font-size: 12px; line-height: 20px; }
+.page .notice.warning { border-color: #efd9b7; }.page .notice.danger { border-color: #ecc6cc; }.page .notice.success { border-color: var(--ss-green-200); }
+.page .btn { min-height: 48px; height: auto; gap: 8px; padding: 12px 16px; border-width: 1px; border-radius: 8px; font-size: 15px; line-height: 22px; white-space: normal; }
+.page .btn.small { min-height: 40px; padding: 8px 12px; font-size: 13px; line-height: 20px; }
+.page .button-row { gap: 12px; }.page .button-row > * { min-width: 0; }
+.page .fixed-cta { padding: 14px 20px calc(14px + env(safe-area-inset-bottom)); background: rgba(255,255,255,.98); border-top: 1px solid var(--color-divider); box-shadow: 0 -8px 24px rgba(18,23,34,.06); backdrop-filter: blur(14px); }
+.page .fixed-cta .btn { min-height: 48px; }
+.page .segment { gap: 4px; padding: 4px; background: var(--color-bg-canvas); border: 1px solid var(--color-border-subtle); border-radius: 8px; }
+.page .segment-item { min-width: 76px; min-height: 40px; height: auto; gap: 6px; padding: 9px 12px; font-size: 13px; line-height: 20px; border-radius: 6px; }
+.page .segment-item.active { color: var(--color-action-primary); background: #fff; box-shadow: 0 1px 4px rgba(26,36,48,.09); }
+.page .switch { width: 44px; height: 26px; flex-basis: 44px; }.page .switch::after { top: 3px; left: 3px; width: 20px; height: 20px; }.page .switch.on::after { transform: translateX(18px); }
+.page .check { width: 20px; height: 20px; flex: 0 0 20px; border-width: 1px; border-radius: 5px; }
+.page .agreement { gap: 9px; font-size: 12px; line-height: 20px; }
+.page .search-box, .page .support-search, .page .dealer-ticket-search { min-height: 46px; height: auto; padding: 0 13px; gap: 9px; background: #fff; border: 1px solid var(--color-border-subtle); border-radius: 8px; }
+.page .search-box input, .page .support-search input, .page .dealer-ticket-search input { height: 44px; font-size: 14px; }
+.page .filter { display: flex; width: 44px; height: 44px; align-items: center; justify-content: center; border: 1px solid var(--color-border-subtle); border-radius: 8px; background: #fff; }
+.page .filter.active { background: var(--ss-brand-50); border-color: var(--ss-brand-200); }
+.page .icon-button { display: flex; width: 44px; height: 44px; flex: 0 0 44px; align-items: center; justify-content: center; }
+
+/* Forms are continuous surfaces; repeated business records retain item borders. */
+.form-page .page-scroll, .auth-simple .page-scroll, .password-page .page-scroll, .verify-page .page-scroll, .profile-detail-page .page-scroll { background: #fff; }
+.form-page .form-card, .form-page .design-business-form, .form-page .assignment-form, .form-page .waypoint-location-form, .form-page .service-project-form { margin-top: 0; padding: 0; border: 0; border-radius: 0; box-shadow: none; background: transparent; }
+.form-page .form-intro { margin: 0 0 24px; }.form-page .form-intro strong { font-size: 22px; line-height: 30px; }.form-page .form-intro text { margin-top: 8px; font-size: 13px; line-height: 21px; }
+.form-page .attachment-grid { gap: 12px; margin-top: 12px; }.form-page .attachment { min-height: 100px; height: auto; padding: 18px 10px; gap: 9px; border: 1px dashed var(--ss-neutral-300); border-radius: 8px; background: var(--ss-neutral-25); font-size: 13px; }
+.form-page .attachment-tip { display: block; margin-top: 10px; }
+.form-page .attachment.added { border-color: var(--color-action-primary); background: var(--ss-brand-50); }
+.form-page .detail-hero, .form-page .project-hero, .form-page .dealer-detail-hero { padding: 20px; border: 0; border-radius: 0; background: #fff; box-shadow: none; }
+.form-page .detail-hero strong, .form-page .project-heading strong, .form-page .dealer-detail-hero strong { font-size: 21px; line-height: 29px; }
+.form-page .detail-hero text, .form-page .project-heading text, .form-page .dealer-meta { font-size: 12px; line-height: 20px; }
+.form-page .detail-row { min-height: 50px; gap: 16px; padding: 14px; border-bottom-width: 1px; }.form-page .detail-row > text { font-size: 13px; }.form-page .detail-row strong { font-size: 14px; line-height: 22px; white-space: normal; overflow-wrap: anywhere; }
+.form-page .assignment-label { margin-bottom: 9px; font-size: 13px; line-height: 20px; }.form-page .assignment-field { margin-bottom: 22px; }
+.form-page .quantity-stepper button, .entity-page .stepper button { width: 36px; height: 36px; }.form-page .quantity-stepper text, .entity-page .stepper text { min-width: 34px; font-size: 14px; }
+.form-page .material-line { padding: 14px 0; gap: 10px; }.form-page .material-line strong { font-size: 14px; }.form-page .material-line text { font-size: 12px; }
+.form-page .capability-list > view { min-height: 52px; padding: 12px 0; gap: 10px; }.form-page .capability-list text { font-size: 14px; }.form-page .capability-list span { font-size: 11px; overflow-wrap: anywhere; }
+.form-page .warranty-history-list, .form-page .project-panel, .form-page .linked-registration { border-radius: 8px; box-shadow: none; }
+.form-page .project-stepper { margin-bottom: 24px; padding: 12px 0; }.form-page .project-stepper text { font-size: 13px; }
+.form-page .support-design-submit, .form-page .design-business-submit { margin-top: 24px; }
+
+.entity-page .entity-list, .entity-page .payment-list, .entity-page .dealer-ticket-list { display: grid; gap: 12px; }
+.entity-page .entity-card, .entity-page .payment-card, .entity-page .dealer-ticket-card { margin: 0; padding: 18px 16px; border: 1px solid var(--color-border-subtle); border-radius: 8px; box-shadow: var(--shadow-card); }
+.entity-page .entity-head { gap: 10px; }.entity-page .entity-head strong, .entity-page .payment-card-head strong, .entity-page .dealer-ticket-head strong { font-size: 16px; line-height: 23px; font-weight: 650; }
+.entity-page .entity-meta, .entity-page .entity-meta text, .entity-page .payment-card-foot, .entity-page .dealer-ticket-summary { font-size: 12px; line-height: 20px; }
+.entity-page .entity-actions { gap: 8px; margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--color-divider); }
+.entity-page .action-button { min-height: 38px; height: auto; padding: 8px 12px; border-width: 1px; border-radius: 6px; font-size: 13px; line-height: 20px; }
+.entity-page .list-toolbar { position:relative;z-index:3;padding: 16px 20px 12px; gap: 10px; background: rgba(255,255,255,.98); border-bottom:1px solid var(--color-divider); }
+.entity-page .list-toolbar.project-search-toolbar { display: grid; grid-template-columns: minmax(0,1fr) 44px 44px; gap: 8px; }
+.entity-page .project-search-toolbar .search-box { min-width: 0; width: auto; }.entity-page .project-search-toolbar input { min-width: 0; width: 100%; }
+.entity-page .status-scroll { padding: 0 20px 14px; background: #fff; }.entity-page .status-tabs { background: var(--color-bg-canvas); }
+.entity-page .advanced-filter, .entity-page .payment-filter-card { margin: 0 20px 16px; padding: 16px; border: 1px solid var(--color-border-subtle); border-radius: 8px; background: #fff; box-shadow:var(--shadow-card); }
+.entity-page .advanced-picker { min-height: 50px; gap: 10px; padding: 12px; border: 1px solid var(--color-border-subtle); border-radius: 8px; }.entity-page .advanced-picker text { font-size: 12px; }.entity-page .advanced-picker strong { font-size: 14px; line-height: 21px; }
+.entity-page .advanced-option { min-height: 44px; gap: 8px; padding: 10px; border-radius: 6px; font-size: 13px; line-height: 20px; }.entity-page .advanced-reset { min-height: 40px; font-size: 13px; }
+.entity-page .service-detail-head, .entity-page .payment-detail-hero, .entity-page .transfer-progress-head { padding: 22px; border: 0; border-radius: 0; box-shadow: none; background: #fff; }
+.entity-page .service-detail-head strong, .entity-page .payment-detail-hero strong, .entity-page .transfer-progress-head strong { font-size: 22px; line-height: 30px; }
+.entity-page .service-detail-head text, .entity-page .payment-detail-hero text, .entity-page .transfer-progress-head text { font-size: 13px; line-height: 21px; }
+.entity-page .message-detail-card, .entity-page .service-design-timeline, .entity-page .service-billing, .entity-page .service-notes, .entity-page .transfer-progress-timeline, .entity-page .payment-detail-card { padding: 20px; border: 0; border-radius: 0; box-shadow: none; }
+.entity-page .message-body { font-size: 14px; line-height: 24px; }.entity-page .message-fields text, .entity-page .billing-line, .entity-page .payment-detail-row { font-size: 13px; line-height: 22px; }
+.entity-page .support-operations button { min-height: 82px; gap: 9px; border-radius: 8px; }.entity-page .support-operations text { font-size: 13px; }
+.entity-page .floating-add { right: 20px; bottom: 24px; width: 48px; height: 48px; border-radius: 50%; }
+.entity-page .purchase-cart-bar { padding: 14px 20px calc(14px + env(safe-area-inset-bottom)); }.entity-page .purchase-cart-bar button { min-height: 44px; padding: 10px 16px; font-size: 14px; border-radius: 8px; }
+
+.add-page .flow-title, .auth-simple .intro-title, .password-page .password-heading, .verify-page .verify-title { display: block; margin: 4px 0 10px; font-size: 23px; line-height: 32px; font-weight: 650; }
+.add-page .flow-copy, .auth-simple .intro-copy, .password-page .password-caption, .verify-page .verify-copy { display: block; margin-bottom: 24px; color: var(--color-text-secondary); font-size: 13px; line-height: 22px; }
+.add-page > .stepper { min-height: 72px; padding: 16px 20px; background: #fff; border-bottom: 1px solid var(--color-divider); }.add-page .step text { font-size: 12px; line-height: 18px; }
+.add-page .method-list { gap: 12px; }.add-page .method-list button { min-height: 88px; padding: 18px 16px; gap: 14px; border: 1px solid var(--color-border-subtle); border-radius: 8px; box-shadow: none; }.add-page .method-list strong { font-size: 16px; line-height: 23px; }.add-page .method-list text { font-size: 12px; line-height: 20px; }
+.add-page .method-icon { width: 44px; height: 44px; flex-basis: 44px; border-radius: 8px; }.add-page .capability-state { font-size: 12px; }
+.add-page .connect-card, .add-page .region-check, .add-page .success-summary, .add-page .waypoint-storage { padding: 20px; border: 0; border-radius: 0; background: #fff; box-shadow: none; }
+.add-page .connect-card > text, .add-page .region-check > text, .add-page .success-state > text { font-size: 21px; line-height: 30px; }.add-page .connect-card > span, .add-page .region-check > span, .add-page .success-state > span { font-size: 13px; line-height: 22px; }
+.add-page .storage-title strong { font-size: 16px; }.add-page .storage-title text { font-size: 12px; line-height: 20px; }.add-page .storage-options { grid-template-columns: minmax(0,1fr); gap: 12px; }.add-page .storage-options button { min-height: 76px; padding: 14px; border-width: 1px; border-radius: 8px; }.add-page .storage-options strong { font-size: 14px; }.add-page .storage-options text { font-size: 12px; line-height: 20px; }
+.auth-simple .intro-icon, .password-page .password-icon, .verify-page .verify-icon { width: 56px; height: 56px; margin-bottom: 20px; border: 0; border-radius: 14px; background: var(--ss-brand-50); }
+.auth-simple .form-card { padding: 0; border: 0; box-shadow: none; }.auth-simple .social-register { gap: 12px; }.auth-simple .social-note { font-size: 12px; line-height: 20px; }
+.verify-page .code-inputs { display: grid; grid-template-columns: repeat(6,minmax(0,1fr)); gap: 8px; margin: 28px 0; }.verify-page .code-box { width: auto; height: 52px; border-width: 1px; border-radius: 8px; font-size: 23px; }.verify-page .code-tip, .verify-page .resend { font-size: 13px; line-height: 22px; }
+
+.settings-page .page-scroll { padding: 16px 20px 28px; }.settings-page .list-card { border: 0; border-radius: 0; box-shadow: none; }.settings-page .list-row { min-height: 64px; padding: 15px 12px; }
+.settings-page .group-label, .profile-detail-page .section-label { display: block; margin: 22px 0 10px; font-size: 12px; line-height: 18px; color: var(--color-text-secondary); }
+.settings-page .language-select-card, .settings-page .privacy-hero, .settings-page .about-page, .settings-page .permission-scope { padding: 20px; border: 0; border-radius: 0; box-shadow: none; background: #fff; }
+.settings-page .language-select-card > .field-label { font-size: 14px; }.settings-page .language-picker-control { min-height: 64px; padding: 12px; gap: 12px; border-width: 1px; border-radius: 8px; }.settings-page .language-picker-icon { width: 36px; height: 36px; flex-basis: 36px; border-radius: 8px; background: var(--ss-brand-50); }.settings-page .language-picker-copy strong { font-size: 15px; line-height: 23px; }.settings-page .language-picker-copy text, .settings-page .language-picker-code, .settings-page .language-select-hint { font-size: 12px; line-height: 19px; }
+.settings-page .privacy-hero > text, .settings-page .about-page > text { font-size: 22px; line-height: 30px; }.settings-page .privacy-hero > span, .settings-page .about-page > span, .settings-page .about-page p { font-size: 13px; line-height: 22px; }
+.settings-page .legal-document { padding: 22px; border: 0; border-radius: 0; box-shadow: none; }.settings-page .legal-intro > text { font-size: 22px; line-height: 30px; }.settings-page .legal-intro > span { font-size: 12px; }.settings-page .legal-intro > p, .settings-page .legal-block text { font-size: 14px; line-height: 25px; }.settings-page .legal-block strong { font-size: 16px; line-height: 24px; }.settings-page .legal-block { grid-template-columns: 28px minmax(0,1fr); gap: 12px; padding: 20px 0; }.settings-page .legal-block > i { width: 28px; height: 28px; font-size: 12px; border-radius: 6px; }
+.profile-detail-page .identity-panel { padding: 20px 0 28px; background: #fff; border: 0; border-radius: 0; }.profile-detail-page .avatar-large, .profile-detail-page .avatar-button { width: 80px; height: 80px; border-radius: 50%; }.profile-detail-page .change-avatar { min-height: 44px; margin-top: 8px; font-size: 14px; }.profile-detail-page .file-rule { font-size: 12px; }
+.profile-detail-page .profile-icon-list { border: 0; border-radius: 0; }.profile-detail-page .profile-icon-row { min-height: 60px; padding: 15px 0; gap: 12px; border-bottom-width: 1px; }.profile-detail-page .profile-icon-row strong { font-size: 14px; line-height: 22px; }.profile-detail-page .profile-icon-row span, .profile-detail-page .profile-icon-row text { font-size: 12px; line-height: 20px; }.profile-detail-page .profile-icon-row > i { width: 28px; height: 28px; flex-basis: 28px; background: transparent; }.profile-detail-page .profile-icon-row > span { min-width: 0; white-space: normal; overflow-wrap: anywhere; }
+
+.process-page .ota-device, .process-page .release, .process-page .device-identity, .process-page .board-form, .process-page .route-editor, .process-page .checkout-address, .process-page .checkout-products, .process-page .checkout-methods, .process-page .checkout-total, .process-page .timeline-card { padding: 20px; border: 0; border-radius: 0; background: #fff; box-shadow: none; }
+.process-page .ota-state { padding: 30px 4px; }.process-page .ota-state > text { font-size: 23px; line-height: 32px; }.process-page .ota-state > span { font-size: 13px; line-height: 22px; }.process-page .ota-progress { font-size: 30px; }.process-page .connection-rail { margin: 24px 0; }.process-page .rail text { font-size: 12px; }
+.process-page .device-identity strong { font-size: 21px; line-height: 30px; }.process-page .device-identity text { font-size: 13px; line-height: 21px; }.process-page .info-list .list-row { align-items: baseline; }.process-page .info-list .row-value { max-width: 62%; white-space: normal; overflow-wrap: anywhere; }
+.process-page .route-editor .input-shell { margin-top: 12px; }.process-page .route-selection-head { gap: 12px; margin: 20px 0 12px; }.process-page .route-selection-head strong { font-size: 15px; }.process-page .route-selection-head text { font-size: 12px; }.process-page .sort-buttons button, .process-page .icon-action { display: flex; width: 40px; height: 40px; align-items: center; justify-content: center; }
+.process-page .checkout-section-title, .process-page .tracking-title, .process-page .trend-head strong { font-size: 17px; line-height: 25px; }.process-page .checkout-method { min-height: 64px; padding: 14px 0; gap: 12px; }.process-page .checkout-method strong { font-size: 15px; }.process-page .checkout-method text { font-size: 12px; }.process-page .checkout-total text { font-size: 13px; line-height: 22px; }
+.process-page .checkout-due strong { font-size: 28px; line-height: 36px; }.process-page .analytics-stats strong, .process-page .report-main-value strong { font-family: var(--ss-font-data); font-size: 28px; line-height: 36px; }.process-page .analytics-stats text, .process-page .report-grid text, .process-page .analytics-legend { font-size: 12px; line-height: 20px; }
+.process-page .timeline-item strong, .entity-page .service-design-step strong, .entity-page .transfer-progress-step strong, .process-page .logistics-design-step strong { font-size: 15px; line-height: 23px; }.process-page .timeline-item text, .entity-page .service-design-step text, .entity-page .transfer-progress-step text, .process-page .logistics-design-step text { font-size: 12px; line-height: 21px; }
+.pdf-page .pdf-meta { min-height: 60px; height: auto; padding: 10px 16px; gap: 12px; }.pdf-page .pdf-meta > view { min-width: 0; flex: 1; }.pdf-page .pdf-meta strong { font-size: 14px; line-height: 21px; }.pdf-page .pdf-meta text { font-size: 12px; }.pdf-page .pdf-meta button { min-height: 40px; font-size: 12px; border-radius: 6px; }.pdf-page .pdf-frame-wrap { min-height: 0; height: auto; flex: 1; }.pdf-page .pdf-state strong { font-size: 17px; }.pdf-page .pdf-state text { font-size: 13px; line-height: 22px; }
+
+@media (max-width: 360px) {
+  .page-scroll, .entity-scroll { padding-left: 16px; padding-right: 16px; }
+  .page .button-row { gap: 8px; }.page .button-row .btn { padding-right: 10px; padding-left: 10px; font-size: 14px; }
+  .page .segment-item { min-width: 64px; padding-right: 9px; padding-left: 9px; }
+}
+
+/* Commercial UI pass: restore clear grouped surfaces on secondary flows. */
+.settings-page .page-scroll { padding:18px 16px 32px; background:var(--color-bg-canvas); }
+.settings-page .list-card { overflow:hidden; background:#fff; border:1px solid var(--color-border-subtle); border-radius:8px; box-shadow:var(--shadow-card); }
+.settings-page .section.list-card { margin-top:14px; }
+.settings-page .list-row { min-height:70px; padding:12px; gap:11px; }
+.settings-page .row-icon,
+.settings-page .row-icon.success,
+.settings-page .row-icon.warning,
+.settings-page .row-icon.purple,
+.settings-page .row-icon.danger { display:flex; width:36px; height:36px; flex:0 0 36px; align-items:center; justify-content:center; border-radius:8px; background:var(--ss-brand-50); }
+.settings-page .row-icon.success { background:var(--ss-green-50); }
+.settings-page .row-icon.warning { background:var(--ss-orange-50); }
+.settings-page .row-icon.danger { background:var(--ss-red-50); }
+.settings-page .list-copy strong { font-size:14px; line-height:21px; }
+.settings-page .list-copy text { margin-top:3px; font-size:12px; line-height:18px; }
+.settings-page .row-value { max-width:92px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+
+.profile-detail-page .page-scroll { padding:16px 16px 32px; background:var(--color-bg-canvas); }
+.profile-detail-page .identity-panel { margin:-16px -16px 0; padding:26px 0 20px; background:linear-gradient(180deg,#eef5ff 0%,var(--color-bg-canvas) 100%); }
+.profile-detail-page .identity-panel.compact { min-height:122px; }
+.profile-detail-page .avatar-large,
+.profile-detail-page .avatar-button { width:84px; height:84px; color:#fff; background:var(--color-action-primary); border:3px solid #fff; box-shadow:0 6px 18px rgba(31,96,217,.16); }
+.profile-detail-page .profile-icon-list { overflow:hidden; background:#fff; border:1px solid var(--color-border-subtle); border-radius:8px; box-shadow:var(--shadow-card); }
+.profile-detail-page .profile-icon-row { min-height:60px; padding:11px 12px; gap:11px; }
+.profile-detail-page .profile-icon-row > i,
+.profile-detail-page .profile-icon-row > i.success { display:flex; width:36px; height:36px; flex:0 0 36px; align-items:center; justify-content:center; background:var(--ss-brand-50); border-radius:8px; }
+.profile-detail-page .profile-icon-row > i.success { background:var(--ss-green-50); }
+.profile-detail-page .profile-icon-row > span { max-width:44%; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; overflow-wrap:normal; }
+.profile-detail-page .section-label { margin:22px 0 10px; color:var(--color-text-body); font-size:15px; font-weight:650; }
+.profile-detail-page .edit-form { padding:18px 16px; background:#fff; border:1px solid var(--color-border-subtle); border-radius:8px; box-shadow:var(--shadow-card); }
+
+.form-page .page-scroll { padding:18px 16px 32px; background:var(--color-bg-canvas); }
+.form-page .page-scroll.with-cta { padding-bottom:108px; }
+.form-page .form-card,
+.form-page .detail-card,
+.form-page .section.card { padding:18px 16px; background:#fff; border:1px solid var(--color-border-subtle); border-radius:8px; box-shadow:var(--shadow-card); }
+.form-page .form-card + .form-card,
+.form-page .section.card + .section.card { margin-top:14px; }
+.form-page .field-control { background:#fff; }
+.form-page .field-control > uni-input,
+.form-page .field-control > input,
+.form-page .field-control > uni-textarea,
+.form-page .field-control > textarea { min-width:0; width:auto; flex:1; text-align:left; }
+.form-page .field-control > .ss-icon { flex:0 0 auto; margin:0; }
+.page.dealer-workspace.form-page .field-control > .ss-icon {
+  min-width:20px;
+  flex:0 0 20px;
+  padding:0;
+  text-align:center;
+}
+.form-page .field-control input,
+.form-page .field-control textarea { text-align:left; }
+.form-page .employee-account-form,
+.form-page .dealer-account-form { padding:18px 16px 2px; }
+.form-page .employee-account-form .field,
+.form-page .dealer-account-form .field { margin-bottom:16px; }
+.form-page .employee-account-form .field-control,
+.form-page .dealer-account-form .field-control { min-height:48px; background:var(--ss-neutral-25); }
+.form-page .account-permission-card { padding:18px 16px; }
+.form-page .account-permission-head { display:flex; align-items:center; justify-content:space-between; gap:14px; padding-bottom:14px; border-bottom:1px solid var(--color-divider); }
+.form-page .account-permission-head > view { min-width:0; flex:1; }
+.form-page .account-permission-head .card-title,
+.form-page .account-permission-head span { display:block; }
+.form-page .account-permission-head span { margin-top:4px; color:var(--color-text-secondary); font-size:12px; line-height:19px; }
+.form-page .project-hero,
+.form-page .detail-hero { margin:0 0 16px; padding:18px 16px; background:linear-gradient(145deg,#f8fbff,#eef5ff); border:1px solid var(--ss-brand-100); border-radius:8px; }
+.form-page .employee-permission-hero,
+.dealer-workspace.form-page .employee-permission-hero { padding:16px; background:linear-gradient(145deg,#f8fbff,#eef5ff); border:1px solid var(--ss-brand-100); border-radius:8px; }
+.form-page .employee-permission-group,
+.dealer-workspace.form-page .employee-permission-group { margin-top:18px; }
+.form-page .employee-permission-group > text,
+.dealer-workspace.form-page .employee-permission-group > text { display:block; margin:0 2px 9px; color:var(--color-text-body); font-size:13px; line-height:20px; font-weight:650; }
+.form-page .employee-permission-group .list-card,
+.dealer-workspace.form-page .employee-permission-group .list-card { overflow:hidden; background:#fff; border:1px solid var(--color-border-subtle); border-radius:8px; box-shadow:var(--shadow-card); }
+.form-page .employee-permission-group .list-row,
+.dealer-workspace.form-page .employee-permission-group .list-row { min-height:68px; padding:11px 12px; gap:11px; }
+.form-page .employee-permission-group .row-icon,
+.form-page .employee-permission-group .row-icon.warning,
+.form-page .employee-permission-group .row-icon.purple,
+.form-page .employee-permission-group .row-icon.success,
+.dealer-workspace.form-page .employee-permission-group .row-icon,
+.dealer-workspace.form-page .employee-permission-group .row-icon.warning,
+.dealer-workspace.form-page .employee-permission-group .row-icon.purple,
+.dealer-workspace.form-page .employee-permission-group .row-icon.success { display:flex; width:36px; height:36px; flex:0 0 36px; align-items:center; justify-content:center; border-radius:8px; background:var(--ss-brand-50); }
+.form-page .employee-permission-group .row-icon.warning,
+.dealer-workspace.form-page .employee-permission-group .row-icon.warning { background:var(--ss-orange-50); }
+.form-page .employee-permission-group .row-icon.purple,
+.dealer-workspace.form-page .employee-permission-group .row-icon.purple { background:var(--ss-brand-50); }
+.form-page .employee-permission-group .row-icon.success,
+.dealer-workspace.form-page .employee-permission-group .row-icon.success { background:var(--ss-green-50); }
+.form-page .employee-minimum-notice,
+.dealer-workspace.form-page .employee-minimum-notice { margin:16px 0 0; padding:14px; border-radius:8px; }
+
+.process-page .page-scroll { padding:18px 16px 32px; background:var(--color-bg-canvas); }
+.process-page .page-scroll.with-cta { padding-bottom:108px; }
+.process-page .ota-device,
+.process-page .release,
+.process-page .device-identity,
+.process-page .board-form,
+.process-page .route-editor,
+.process-page .checkout-address,
+.process-page .checkout-products,
+.process-page .checkout-methods,
+.process-page .checkout-total,
+.process-page .timeline-card,
+.process-page .trend-card,
+.process-page .payment-method,
+.process-page .order-product,
+.process-page .page-scroll > .card { margin-bottom:14px; padding:18px 16px; background:#fff; border:1px solid var(--color-border-subtle); border-radius:8px; box-shadow:var(--shadow-card); }
+.process-page .timeline-card,
+.process-page .tracking-card { padding:18px; }
+
+.entity-page .entity-scroll { padding:16px; background:var(--color-bg-canvas); }
+.entity-page .entity-card { background:#fff; box-shadow:var(--shadow-card); }
+.entity-page .service-detail-head,
+.entity-page .message-detail-card,
+.entity-page .payment-detail-card,
+.entity-page .payment-detail-hero,
+.entity-page .service-design-timeline,
+.entity-page .service-billing,
+.entity-page .service-notes,
+.entity-page .transfer-progress-head,
+.entity-page .transfer-progress-timeline { margin:0 0 14px; padding:18px 16px; background:#fff; border:1px solid var(--color-border-subtle); border-radius:8px; box-shadow:var(--shadow-card); }
+
+/* Authentication secondary flows use the same blue canvas and card hierarchy. */
+.auth-simple,
+.password-page,
+.verify-page { background:var(--ss-brand-canvas); }
+.auth-simple .page-scroll,
+.password-page .page-scroll,
+.verify-page .page-scroll { background:linear-gradient(180deg,var(--ss-brand-50) 0,#f8fbff 160px,var(--ss-neutral-50) 100%); }
+.auth-simple .form-card,
+.password-page .password-design-form,
+.verify-page .wechat-bind-form { background:#fff;border:1px solid var(--color-border-subtle);border-radius:8px;box-shadow:var(--shadow-card); }
+
+/* Let identifiers and multi-part business names remain readable on narrow screens. */
+.page .list-copy strong,
+.page .list-copy text { white-space:normal;overflow-wrap:anywhere;text-overflow:clip; }
+.page .list-row > .ss-icon:last-child { flex:0 0 auto; }
+.entity-page .entity-head { align-items:flex-start; }
+.entity-page .entity-head .list-copy { padding-top:2px; }
+.entity-page .entity-head .status { flex:0 0 auto;max-width:42%; }
+.entity-page .entity-meta { display:flex;flex-wrap:wrap;gap:4px 12px; }
+.entity-page .entity-card,
+.entity-page .payment-card,
+.entity-page .dealer-ticket-card { box-shadow:none; }
+.entity-page .business-record-facts strong,
+.entity-page .business-detail-facts strong { overflow-wrap:anywhere; }
+.entity-page .business-record-actions { flex-wrap:wrap; }
+.entity-page .business-record-actions .action-button { min-height:40px; }
+.entity-page .status-tabs,
+.entity-page .payment-tabs { overflow-x:auto;overscroll-behavior-x:contain;scrollbar-width:none; }
+.entity-page .status-tabs::-webkit-scrollbar,
+.entity-page .payment-tabs::-webkit-scrollbar { display:none; }
+.entity-page .advanced-filter,
+.entity-page .payment-filter-card { box-shadow:none; }
+.entity-page .purchase-record-meta { grid-template-columns:repeat(2,minmax(0,1fr));gap:0 12px; }
+.entity-page .purchase-record-meta > view { min-width:0;padding:0 0 0 12px; }
+.entity-page .purchase-record-meta > view:first-child { grid-column:1/-1;display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:11px;padding:0 0 11px;border:0;border-bottom:1px solid var(--color-divider); }
+.entity-page .purchase-record-meta > view:nth-child(2) { padding-left:0;border-left:0; }
+.entity-page .purchase-record-meta text { white-space:normal; }
+.entity-page .purchase-record-meta strong { overflow-wrap:anywhere;font-size:13px;line-height:20px; }
+.entity-page .purchase-record-meta > view:first-child strong { flex:0 0 auto;margin:0;color:var(--color-text-primary);font-size:18px;line-height:24px; }
+
+.form-page .field-label { color:var(--color-text-primary); }
+.form-page .field-control { min-width:0; }
+.form-page .field-control > text { min-width:0;overflow-wrap:anywhere; }
+.form-page .employee-account-form,
+.form-page .dealer-account-form { padding-bottom:8px; }
+.form-page .employee-permission-group .list-copy text { line-height:19px; }
+.form-page .employee-permission-group .switch { flex-shrink:0; }
+.form-page .project-heading strong { white-space:normal;overflow-wrap:anywhere;text-overflow:clip; }
+.form-page .project-metrics > view { min-width:0; }
+.form-page .material-line strong { white-space:normal;overflow-wrap:anywhere;text-overflow:clip; }
+.form-page .material-line .quantity-stepper { flex-shrink:0; }
+.form-page .forbidden-state { display:flex;min-height:300px;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:32px 20px;color:var(--color-text-primary);text-align:center; }
+.form-page .forbidden-state > .ss-icon { display:flex;width:56px;height:56px;align-items:center;justify-content:center;margin-bottom:4px;color:var(--color-text-secondary);background:var(--ss-brand-50);border-radius:8px; }
+.form-page .forbidden-state > text { font-size:17px;line-height:25px;font-weight:650; }
+.form-page .forbidden-state > span { max-width:280px;color:var(--color-text-secondary);font-size:13px;line-height:21px; }
+
+@media (max-width:380px) {
+  .entity-page .entity-head { gap:8px; }
+  .entity-page .entity-head strong { font-size:15px; }
+  .entity-page .entity-head .status { max-width:38%; }
+  .form-page .employee-permission-group .list-row { gap:8px; }
+}

@@ -1,0 +1,58 @@
+/* The same visual and sizing rules apply to all custom sheets and dialogs. */
+.select-overlay, .language-picker-layer, .route-picker-layer, .detail-panel-layer, .supplement-layer, .device-picker-layer, .modal-layer, .action-sheet-layer { background: rgba(24,32,44,.44); }
+.select-sheet, .language-picker-sheet, .route-picker-sheet, .detail-panel, .supplement-sheet, .device-picker-sheet, .project-menu-sheet, .action-sheet { display: flex; width: 100%; max-width: 100%; max-height: calc(100% - 40px); min-height: 0; flex-direction: column; padding: 10px 20px calc(20px + env(safe-area-inset-bottom)); overflow: hidden; background: #fff; border: 0; border-radius: 16px 16px 0 0; box-shadow: 0 -12px 40px rgba(24,32,44,.12); box-sizing: border-box; }
+.select-handle, .language-picker-handle, .sheet-handle, .panel-grabber, .supplement-handle, .device-picker-handle { width: 36px; height: 4px; min-height: 4px; flex: 0 0 4px; margin: 0 auto 10px; background: var(--ss-neutral-300); border-radius: 4px; }
+.select-head, .language-picker-head, .route-picker-head, .panel-header, .supplement-head, .device-picker-head, .sheet-heading { display: flex; min-height: 64px; flex-shrink: 0; align-items: center; justify-content: space-between; gap: 12px; padding: 6px 0 14px; border-bottom: 1px solid var(--color-divider); }
+.select-head > view, .language-picker-head > view, .route-picker-head > view, .panel-header > view, .supplement-head > view, .device-picker-head > view { min-width: 0; flex: 1; }
+.select-head > view > text, .language-picker-head strong, .route-picker-head strong, .panel-header strong, .supplement-head strong, .device-picker-head strong, .sheet-heading > text { font-size: 18px; line-height: 26px; font-weight: 650; white-space: normal; overflow-wrap: anywhere; }
+.select-head span, .language-picker-head > view > text, .route-picker-head > view > text, .panel-header > view > text, .supplement-head > view > text, .device-picker-head > view > text { display: block; margin-top: 5px; color: var(--color-text-secondary); font-size: 12px; line-height: 19px; }
+.select-close, .language-picker-close, .route-picker-head .icon-button, .panel-header button, .supplement-head .icon-button, .device-picker-head button, .sheet-heading .icon-button { display: flex; width: 44px; height: 44px; flex: 0 0 44px; align-items: center; justify-content: center; margin: 0; padding: 0; border: 0; background: transparent; }
+.select-search { display: flex; min-height: 46px; flex: 0 0 auto; align-items: center; gap: 9px; margin: 14px 0 6px; padding: 0 12px; background: var(--color-bg-canvas); border: 1px solid var(--color-border-subtle); border-radius: 8px; }.select-search input { min-width: 0; height: 44px; flex: 1; font-size: 14px; }
+.select-options, .language-picker-list, .route-picker-list, .sheet-options, .device-picker-list { min-height: 0; height: auto; max-height: min(52dvh, 420px); flex: 0 1 auto; overscroll-behavior: contain; }
+.select-option, .language-picker-option, .route-picker-list > button, .sheet-option, .device-picker-row { display: flex; width: 100%; min-height: 58px; align-items: center; gap: 12px; padding: 14px 10px; border: 0; border-bottom: 1px solid var(--color-divider); border-radius: 0; background: #fff; color: var(--color-text-body); font-size: 14px; line-height: 22px; text-align: left; }
+.select-option > text { min-width: 0; flex: 1; white-space: normal; overflow-wrap: anywhere; }.select-option.selected, .language-picker-option.selected { background: var(--ss-brand-50); color: var(--color-action-primary); }
+.language-option-code { display: flex; width: 36px; height: 36px; flex: 0 0 36px; align-items: center; justify-content: center; background: var(--color-bg-canvas); color: var(--color-text-secondary); border-radius: 8px; font-size: 11px; }
+.language-option-copy strong, .sheet-option-copy text, .route-picker-list strong { font-size: 15px; line-height: 23px; font-weight: 600; }.language-option-copy text, .sheet-option-copy span, .route-picker-list text { margin-top: 4px; font-size: 12px; line-height: 19px; }
+.sheet-option-icon { width: 36px; height: 36px; flex: 0 0 36px; border-radius: 8px; background: var(--ss-brand-50); }.sheet-option.danger .sheet-option-icon { background: var(--ss-red-50); }.sheet-option.warning .sheet-option-icon { background: var(--ss-orange-50); }
+.select-cancel, .language-picker-cancel, .route-picker-done, .sheet-cancel, .device-picker-add { width: 100%; min-height: 48px; height: auto; flex: 0 0 auto; margin-top: 16px; padding: 12px 16px; border-radius: 8px; font-size: 15px; line-height: 22px; }
+.select-empty, .route-picker-empty { display: flex; min-height: 160px; flex-direction: column; align-items: center; justify-content: center; gap: 12px; padding: 24px 16px; font-size: 14px; line-height: 22px; text-align: center; }.select-empty span { font-size: 12px; line-height: 20px; }
+.panel-scroll { min-height: 0; height: auto; max-height: min(65dvh, 540px); flex: 0 1 auto; padding: 18px 0 8px; }
+.panel-list, .mode-list, .chart-tool-list { border: 1px solid var(--color-border-subtle); border-radius: 8px; box-shadow: none; }.panel-list-row, .mode-list button, .chart-tool-list button { min-height: 64px; padding: 14px 12px; gap: 12px; border-bottom-width: 1px; }
+.panel-list-row strong, .mode-list strong, .chart-tool-list strong { font-size: 15px; line-height: 23px; }.panel-list-row text, .mode-list text, .chart-tool-list text { font-size: 12px; line-height: 20px; white-space: normal; overflow-wrap: anywhere; }
+.panel-icon { width: 36px; height: 36px; flex: 0 0 36px; border-radius: 8px; }.compact-action { min-height: 40px; height: auto; padding: 8px 10px; font-size: 12px; line-height: 18px; border-radius: 6px; }
+.parameter-card { padding: 16px; gap: 12px; border-width: 1px; border-radius: 8px; }.parameter-card strong { font-size: 15px; line-height: 22px; }.parameter-card text { font-size: 12px; line-height: 20px; }
+.field-block { margin-top: 22px; }.field-block .field-label, .chart-setting-group > text { margin-bottom: 9px; font-size: 13px; line-height: 20px; }.field-block > span { margin-top: 8px; font-size: 12px; line-height: 20px; }
+.number-field { height: 50px; border-width: 1px; border-radius: 8px; }.number-field input { padding: 0 14px; font-size: 15px; }.number-field text { font-size: 13px; }
+.segment-control { gap: 4px; padding: 4px; background: var(--color-bg-canvas); border-radius: 8px; }.segment-control button { min-height: 40px; height: auto; padding: 8px 6px; border-radius: 6px; font-size: 13px; line-height: 20px; }.segment-control button.active { background: var(--ss-brand-50); color: var(--color-action-primary); }
+.distance-options { gap: 6px; }.distance-options button { min-height: 42px; height: auto; padding: 8px 0; font-size: 13px; border-width: 1px; border-radius: 6px; }
+.toggle-row > i, .waypoint-sync-setting > i { width: 44px; height: 26px; flex: 0 0 44px; }.toggle-row > i::after, .waypoint-sync-setting > i::after { top: 3px; left: 3px; width: 20px; height: 20px; }.toggle-row > i.on::after, .waypoint-sync-setting > i.on::after { transform: translateX(18px); }
+.panel-note { padding: 14px; gap: 9px; border-radius: 8px; font-size: 12px; line-height: 20px; }.panel-primary { min-height: 48px; height: auto; margin-top: 20px; padding: 12px 16px; font-size: 15px; border-radius: 8px; }
+.panel-toolbar strong { font-size: 16px; line-height: 24px; }.panel-toolbar text { font-size: 12px; line-height: 20px; }
+.info-grid { gap: 12px; }.info-grid > view { padding: 14px 10px; border-radius: 6px; }.info-grid text { font-size: 12px; line-height: 20px; }.info-grid strong { font-size: 14px; line-height: 22px; white-space: normal; overflow-wrap: anywhere; }
+.supplement-input { min-height: 128px; width: 100%; margin-top: 18px; padding: 14px; border: 1px solid var(--ss-neutral-200); border-radius: 8px; font-size: 15px; line-height: 24px; }.supplement-actions { flex-shrink: 0; margin-top: 18px; }
+.project-menu-sheet > button { display: flex; min-height: 66px; gap: 12px; align-items: center; padding: 14px 0; border-bottom: 1px solid var(--color-divider); }.project-menu-sheet strong { font-size: 15px; line-height: 23px; }.project-menu-sheet text { font-size: 12px; line-height: 20px; }.project-menu-sheet .cancel-menu { justify-content: center; min-height: 48px; margin-top: 12px; border: 0; background: var(--color-bg-canvas); border-radius: 8px; font-size: 15px; }
+.modal-layer { padding: 24px; }.modal { width: 100%; max-width: 344px; max-height: calc(100% - 24px); overflow-y: auto; padding: 24px; border: 0; border-radius: 12px; box-shadow: 0 16px 56px rgba(24,32,44,.18); text-align: left; }
+.modal-icon { width: 44px; height: 44px; margin: 0 0 16px; border-radius: 12px; }.modal-title { display: block; font-size: 20px; line-height: 28px; font-weight: 650; overflow-wrap: anywhere; }.modal-copy { margin-top: 12px; color: var(--color-text-secondary); font-size: 14px; line-height: 24px; }
+.modal-actions { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 10px; margin-top: 24px; }.modal-actions.single { grid-template-columns: minmax(0,1fr); }.modal-actions .btn { min-height: 46px; height: auto; padding: 11px 10px; border-width: 1px; border-radius: 8px; font-size: 14px; line-height: 22px; white-space: normal; }
+.empty { min-height: 240px; padding: 36px 20px; }.empty-icon { width: 64px; height: 64px; margin-bottom: 20px; border: 0; border-radius: 16px; background: var(--ss-brand-50); }.empty-title { font-size: 18px; line-height: 27px; }.empty-copy { max-width: 280px; margin: 10px 0 24px; font-size: 13px; line-height: 22px; }
+
+.modal { max-height:calc(100dvh - 64px);overscroll-behavior:contain; }
+.modal-copy { display:block;white-space:pre-line;overflow-wrap:anywhere; }
+.modal-actions { position:sticky;bottom:-24px;padding-top:12px;background:#fff; }
+.modal-actions .btn { min-width:0;overflow-wrap:anywhere; }
+.sheet-heading > text,
+.sheet-option-copy { min-width:0;white-space:normal;overflow-wrap:anywhere; }
+.sheet-option-copy text { font-size:14px;line-height:21px; }
+.sheet-option-copy span { font-size:12px;line-height:19px; }
+.sheet-options { min-height:0;max-height:min(58dvh,480px);overscroll-behavior:contain; }
+.select-options,
+.language-picker-list,
+.route-picker-list,
+.device-picker-list { max-height:min(58dvh,480px); }
+.sheet-cancel { flex-shrink:0; }
+@media (max-width:380px) {
+  .modal-layer { padding:16px; }
+  .modal { padding:20px; }
+  .modal-actions { bottom:-20px;gap:8px; }
+  .select-sheet,.language-picker-sheet,.route-picker-sheet,.detail-panel,.supplement-sheet,.device-picker-sheet,.project-menu-sheet,.action-sheet { padding-right:16px;padding-left:16px; }
+}

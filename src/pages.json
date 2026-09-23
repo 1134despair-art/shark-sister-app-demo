@@ -1,0 +1,29 @@
+{
+  "pages": [
+    { "path": "pages/startup/index", "style": { "navigationStyle": "custom" } },
+    { "path": "pages/startup/guide", "style": { "navigationStyle": "custom" } },
+    { "path": "pages/auth/login", "style": { "navigationStyle": "custom" } },
+    { "path": "pages/auth/register", "style": { "navigationStyle": "custom" } },
+    { "path": "pages/auth/verify", "style": { "navigationStyle": "custom" } },
+    { "path": "pages/auth/password", "style": { "navigationStyle": "custom" } },
+    { "path": "pages/shell/index", "style": { "navigationStyle": "custom" } },
+    { "path": "pages/device/detail", "style": { "navigationStyle": "custom" } },
+    { "path": "pages/device/add", "style": { "navigationStyle": "custom" } },
+    { "path": "pages/manage/list", "style": { "navigationStyle": "custom" } },
+    { "path": "pages/manage/form", "style": { "navigationStyle": "custom" } },
+    { "path": "pages/document/pdf", "style": { "navigationStyle": "custom" } },
+    { "path": "pages/process/index", "style": { "navigationStyle": "custom" } },
+    { "path": "pages/profile/detail", "style": { "navigationStyle": "custom" } },
+    { "path": "pages/profile/settings", "style": { "navigationStyle": "custom" } },
+    { "path": "pages/design-case/index", "style": { "navigationStyle": "custom" } }
+  ],
+  "globalStyle": {
+    "navigationStyle": "custom",
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "鲨鱼妹妹",
+    "navigationBarBackgroundColor": "#F7F9FC",
+    "backgroundColor": "#F7F9FC",
+    "backgroundTextStyle": "dark",
+    "enablePullDownRefresh": false
+  }
+}

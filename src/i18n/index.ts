@@ -1,0 +1,34 @@
+import { createI18n } from 'vue-i18n'
+import { appLocales, isSupportedLocale } from '@/config/locales'
+import type { LocaleCode } from '@/types/models'
+
+const zh = {
+  brand: '鲨鱼妹妹', tagline: '连接海上设备，掌握每一次运行状态',
+  auth: { title: '欢迎回来', account: '手机号 / 账号', email: '邮箱地址', password: '登录密码', login: '登录', logging: '正在登录', forgot: '忘记密码', register: '注册账号', agreement: '登录即代表你同意《用户协议》和《隐私政策》', agreementRequired: '请先同意用户协议与隐私政策', demo: '演示账号', userDemo: '普通用户', dealerAdminDemo: '经销商管理员', dealerStaffDemo: '经销商员工', invalid: '账号或密码不正确，请检查后重试', invalidRemaining: '账号或密码不正确，还可尝试 {count} 次', locked: '账号已锁定，请在 {time} 后重试', region: '服务地区', cn: '中国大陆', global: '海外地区', guest: '游客浏览', guestMode: '游客模式', guestModeDescription: '游客可以查看公开设备、离线地图和帮助内容；设备控制、航点保存和售后提交需要登录。', continueGuest: '继续浏览', authorized: '授权成功', authorizationFailed: '授权失败，请重试' },
+  nav: { home: '首页', device: '设备', add: '添加', workbench: '工作台', map: '地图', profile: '我的' },
+  common: { all: '全部', online: '在线', offline: '离线', warning: '异常', pending: '待处理', completed: '已完成', search: '搜索', filter: '筛选', cancel: '取消', confirm: '确认', save: '保存', edit: '编辑', delete: '删除', add: '新建', retry: '重试', more: '更多', reset: '重置', viewAll: '全部', success: '操作成功', loading: '加载中', noData: '暂无数据', submit: '提交', next: '下一步', back: '返回' },
+  home: { greeting: '早上好', title: '设备管理', heroTitle: '智慧连接 设备掌控', heroSub: '高效管理设备，轻松掌控全局', total: '设备总数', onlineDevices: '在线设备', offlineDevices: '离线设备', types: '设备类型', recent: '设备列表', distribution: '设备类型分布', todo: '今日待办', revenue: '本月采购', projects: '进行中项目' },
+  device: { title: '设备列表', detail: '设备详情', type: '设备类型', model: '设备型号', serial: '设备编号', position: '安装位置', state: '设备状态', runtime: '运行时长', output: '今日产量', voltage: '电压', current: '电流', power: '功率', water: '水温', ambient: '环境温度', operation: '设备操作', remote: '远程控制', settings: '运行设置', report: '数据报表', ota: '固件升级', location: '查看设备位置', unbind: '解绑设备', lastOnline: '最后在线', add: '添加设备', scan: '蓝牙扫描', qr: '扫码绑定', manual: '手动输入', permission: '设备权限预检', connect: '建立连接', regionCheck: '地区校验', bindSuccess: '绑定成功' },
+  map: { title: '设备地图', waypoint: '航点', route: '航线', savePosition: '保存当前位置', upload: '上传队列', playback: '轨迹回放', currentDevice: '当前设备', plan: '规划航线' },
+  profile: { title: '我的', personal: '个人资料', security: '账号与安全', notifications: '通知设置', language: '语言与单位', payment: '支付记录', support: '售后与帮助', settings: 'App 设置', logout: '退出登录', organization: '组织与团队' },
+  dealer: { title: '经销商工作台', projects: '安装项目', staff: '员工账号', aftersales: '售后工单', materials: '物料申请', logistics: '物流订单', transfers: '设备分配与调拨', purchase: '设备采购', payments: '支付记录', outlets: '二级经销商', analytics: '经营概览', permissions: '角色与权限' },
+  status: { normal: '正常运行', realtime: '实时更新', connected: '网络连接', synced: '已同步', failed: '失败', processing: '处理中' },
+}
+
+const en = {
+  brand: 'Shark Sister', tagline: 'Connect marine equipment and stay in control',
+  auth: { title: 'Welcome back', account: 'Email / account', email: 'Email address', password: 'Password', login: 'Sign in', logging: 'Signing in', forgot: 'Forgot password', register: 'Create account', agreement: 'By signing in you agree to the Terms and Privacy Policy', agreementRequired: 'Please agree to the Terms and Privacy Policy first', demo: 'Demo accounts', userDemo: 'Owner account', dealerAdminDemo: 'Dealer administrator', dealerStaffDemo: 'Dealer staff', invalid: 'Incorrect account or password. Please try again.', invalidRemaining: 'Incorrect account or password. {count} attempts remaining', locked: 'Account locked. Try again in {time}', region: 'Service region', cn: 'China', global: 'Global', guest: 'Continue as guest', guestMode: 'Guest mode', guestModeDescription: 'Guests can view public devices, offline maps, and help. Sign in to control devices, save waypoints, or request service.', continueGuest: 'Continue', authorized: 'Authorization completed', authorizationFailed: 'Authorization failed. Try again.' },
+  nav: { home: 'Home', device: 'Devices', add: 'Add', workbench: 'Workspace', map: 'Map', profile: 'Me' },
+  common: { all: 'All', online: 'Online', offline: 'Offline', warning: 'Alert', pending: 'Pending', completed: 'Completed', search: 'Search', filter: 'Filter', cancel: 'Cancel', confirm: 'Confirm', save: 'Save', edit: 'Edit', delete: 'Delete', add: 'New', retry: 'Retry', more: 'More', reset: 'Reset', viewAll: 'View all', success: 'Completed', loading: 'Loading', noData: 'No data', submit: 'Submit', next: 'Next', back: 'Back' },
+  home: { greeting: 'Good morning', title: 'Equipment', heroTitle: 'Connected operations', heroSub: 'Manage every device with confidence', total: 'Total devices', onlineDevices: 'Online', offlineDevices: 'Offline', types: 'Types', recent: 'Devices', distribution: 'Device distribution', todo: 'Tasks today', revenue: 'Monthly purchase', projects: 'Active projects' },
+  device: { title: 'Devices', detail: 'Device details', type: 'Type', model: 'Model', serial: 'Serial number', position: 'Installed at', state: 'Device status', runtime: 'Runtime', output: 'Output today', voltage: 'Voltage', current: 'Current', power: 'Power', water: 'Water', ambient: 'Ambient', operation: 'Actions', remote: 'Remote control', settings: 'Operating settings', report: 'Data report', ota: 'Firmware update', location: 'View device location', unbind: 'Unbind device', lastOnline: 'Last online', add: 'Add device', scan: 'Bluetooth scan', qr: 'Scan QR code', manual: 'Enter manually', permission: 'Permission check', connect: 'Connect device', regionCheck: 'Region check', bindSuccess: 'Device activated' },
+  map: { title: 'Device map', waypoint: 'Waypoints', route: 'Routes', savePosition: 'Save current position', upload: 'Upload queue', playback: 'Track playback', currentDevice: 'Current device', plan: 'Plan route' },
+  profile: { title: 'Me', personal: 'Profile', security: 'Account & security', notifications: 'Notifications', language: 'Language & units', payment: 'Payments', support: 'Support', settings: 'App settings', logout: 'Sign out', organization: 'Organization & team' },
+  dealer: { title: 'Dealer workspace', projects: 'Projects', staff: 'Staff accounts', aftersales: 'Service tickets', materials: 'Parts requests', logistics: 'Logistics', transfers: 'Device assignment & transfer', purchase: 'Purchasing', payments: 'Payments', outlets: 'Sub-dealers', analytics: 'Business overview', permissions: 'Roles & permissions' },
+  status: { normal: 'Running normally', realtime: 'Live', connected: 'Connected', synced: 'Synced', failed: 'Failed', processing: 'Processing' },
+}
+
+const defaultLocale: LocaleCode = isSupportedLocale(import.meta.env.VITE_APP_DEFAULT_LOCALE) ? import.meta.env.VITE_APP_DEFAULT_LOCALE : 'zh-Hans'
+const messages = Object.fromEntries(appLocales.map((item) => [item.code, item.code === 'zh-Hans' ? zh : en])) as Record<LocaleCode, typeof zh | typeof en>
+
+export const i18n = createI18n({ legacy: false, globalInjection: true, locale: defaultLocale, fallbackLocale: 'en', messages })
